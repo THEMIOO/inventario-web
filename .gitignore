@@ -1,0 +1,25 @@
+# Backend
+server/node_modules/
+server/.env
+server/logs/
+server/coverage/
+## server/uploads/*
+
+# Frontend
+client/node_modules/
+client/.env
+client/dist/
+client/coverage/
+
+# Generales
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.tmp
+*.swp
+*.swo
+build/
+dist/
+tmp/

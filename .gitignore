@@ -3,7 +3,7 @@ server/node_modules/
 server/.env
 server/logs/
 server/coverage/
-## server/uploads/*
+server/uploads/*
 
 # Frontend
 client/node_modules/

@@ -1,3 +1,5 @@
+import { resolveUrl } from '../api/resolveUrl';
+
 export default function Table({ rows, onEdit, onDelete }) {
   return (
     <div className="overflow-x-auto border rounded bg-white">
@@ -11,7 +13,12 @@ export default function Table({ rows, onEdit, onDelete }) {
         <tbody>
           {rows.map(r => (
             <tr key={r._id} className="border-t">
-              <td className="p-3">{r.fotoUrl ? <img src={r.fotoUrl} alt={r.nombre} className="h-12 w-12 object-cover rounded" /> : '—'}</td>
+              <td className="p-3">
+                {r.fotoUrl
+                  ? <img src={resolveUrl(r.fotoUrl)} alt={r.nombre} className="h-12 w-12 object-cover rounded"
+                         onError={(e) => { e.currentTarget.style.display='none'; }} />
+                  : '—'}
+              </td>
               <td className="p-3">{r.codigo}</td>
               <td className="p-3">{r.nombre}</td>
               <td className="p-3">{r.cantidad}</td>

@@ -31,7 +31,12 @@ export default function ItemEdit() {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-semibold">Editar artículo</h2>
-      <ItemForm defaultValues={defaults} onSubmit={onSubmit} submitting={isPending} />
+      <ItemForm
+        defaultValues={defaults}
+        onSubmit={onSubmit}
+        submitting={isPending}
+        currentImageUrl={data.fotoUrl} // 👈 importante
+      />
     </div>
   );
 }

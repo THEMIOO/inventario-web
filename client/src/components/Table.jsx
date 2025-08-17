@@ -1,4 +1,4 @@
-"use client"
+
 
 import { resolveUrl } from "../api/resolveUrl"
 import Swal from "sweetalert2"
@@ -104,13 +104,13 @@ export default function Table({ rows, onEdit, onDelete }) {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleEdit(r)}
-                    className="bg-accent hover:bg-accent/90 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+                    className="bg-accent hover:bg-accent/90 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
                   >
                     Editar
                   </button>
                   <button
                     onClick={() => onDelete(r)}
-                    className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+                    className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
                   >
                     Borrar
                   </button>

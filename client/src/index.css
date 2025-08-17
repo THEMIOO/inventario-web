@@ -1,10 +1,9 @@
 @import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;500;600&display=swap");
 
 
 :root {
-  /* Updated color palette to white base, green secondary, blue tertiary */
+
   --background: #ffffff;
   --foreground: #1f2937;
   --card: #f8fafc;
@@ -24,7 +23,7 @@
   --border: #e5e7eb;
   --input: #f9fafb;
   --ring: rgba(59, 130, 246, 0.3);
-  /* Updated all chart colors to use the same green for consistent indicators */
+
   --chart-1: #10b981;
   --chart-2: #10b981;
   --chart-3: #10b981;
@@ -42,7 +41,7 @@
 }
 
 .dark {
-  /* Updated dark mode colors to maintain green secondary and blue tertiary */
+
   --background: #0f172a;
   --foreground: #f1f5f9;
   --card: #1e293b;
@@ -62,7 +61,7 @@
   --border: #334155;
   --input: #1e293b;
   --ring: rgba(96, 165, 250, 0.3);
-  /* Updated all dark mode chart colors to use the same green for consistent indicators */
+
   --chart-1: #34d399;
   --chart-2: #34d399;
   --chart-3: #34d399;
@@ -116,7 +115,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Added custom font families */
+
   --font-heading: "Montserrat", system-ui, sans-serif;
   --font-body: "Open Sans", system-ui, sans-serif;
 }
@@ -129,7 +128,7 @@
     @apply bg-background text-foreground font-body;
   }
 
-  /* Typography classes for consistent font usage */
+
   .font-heading {
     font-family: var(--font-heading);
   }

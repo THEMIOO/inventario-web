@@ -27,7 +27,7 @@ export default function SearchBar({ onSearch, defaultValue = "" }) {
         />
       </div>
       <button
-        className="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-xl font-heading font-bold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+        className="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-xl font-heading font-bold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 cursor-pointer"
         onClick={() => onSearch(q)}
       >
         Buscar

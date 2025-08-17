@@ -121,12 +121,12 @@ export default function ItemForm({ defaultValues, onSubmit, submitting, currentI
             </div>
 
             <div>
-              <label className="block text-sm font-heading font-semibold text-foreground mb-2">Foto del Producto</label>
-              <div className="space-y-4">
+              <label className=" block text-sm font-heading font-semibold text-foreground mb-2">Foto del Producto</label>
+              <div className="space-y-4 ">
                 <input
                   type="file"
                   accept="image/*"
-                  className="w-full px-4 py-3 bg-input border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-secondary file:text-white file:font-semibold hover:file:bg-secondary/90 transition-all duration-200"
+                  className="w-full px-4 py-3 bg-input border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-secondary file:text-white file:font-semibold hover:file:bg-secondary/90 transition-all duration-200 cursor-pointer"
                   {...register("foto")}
                 />
                 {previewSrc && (
@@ -151,21 +151,21 @@ export default function ItemForm({ defaultValues, onSubmit, submitting, currentI
           </div>
         </div>
 
-        <div className="flex justify-end gap-4 mt-8 pt-6 border-t border-border">
+        <div className="cursor-pointer transition flex justify-end gap-4 mt-8 pt-6 border-t border-border">
           <button
             type="button"
             onClick={() => window.history.back()}
-            className="px-8 py-3 border border-border text-foreground rounded-xl font-heading font-semibold hover:bg-muted transition-all duration-200"
+            className="cursor-pointer px-8 py-3 border border-border text-foreground rounded-xl font-heading font-semibold hover:bg-muted transition-all duration-200"
           >
             Cancelar
           </button>
           <button
             disabled={submitting}
-            className="bg-secondary hover:bg-secondary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-3 rounded-xl font-heading font-bold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 disabled:transform-none"
+            className="cursor-pointer bg-secondary hover:bg-secondary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-3 rounded-xl font-heading font-bold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 disabled:transform-none"
           >
             {submitting ? (
               <div className="flex items-center space-x-2">
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                <div className="cursor-pointer transition animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                 <span>Guardando...</span>
               </div>
             ) : defaultValues?.codigo ? (

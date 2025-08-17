@@ -1,4 +1,4 @@
-"use client"
+
 
 import { useState } from "react"
 import { useItemsList } from "../hooks/useItemsQueries"
@@ -11,7 +11,7 @@ import Swal from "sweetalert2"
 
 export default function ItemsList() {
   const navigate = useNavigate()
-  const [params, setParams] = useState({ page: 1, limit: 10, q: "", sort: "-createdAt", _refresh: Date.now() })
+  const [params, setParams] = useState({ page: 1, limit: 6, q: "", sort: "-createdAt", _refresh: Date.now() })
   const { data, isLoading } = useItemsList(params)
 
   const onSearch = (q) => setParams((p) => ({ ...p, page: 1, q }))
@@ -20,15 +20,15 @@ export default function ItemsList() {
   const onEdit = (row) => navigate(`/edit/${row._id}`)
 
   const onDeleteRow = async (row) => {
-    
+    console.log("[v0] Starting delete process for:", row.nombre)
 
     const result = await Swal.fire({
       title: "¿Estás seguro?",
       text: `¿Deseas eliminar "${row.nombre}"? Esta acción no se puede deshacer.`,
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#10b981", // Verde (secondary color)
-      cancelButtonColor: "#6b7280", // Gris
+      confirmButtonColor: "#10b981", 
+      cancelButtonColor: "#6b7280", 
       confirmButtonText: "Sí, eliminar",
       cancelButtonText: "Cancelar",
       reverseButtons: true,
@@ -37,7 +37,7 @@ export default function ItemsList() {
 
     if (result.isConfirmed) {
       try {
-        
+        console.log("[v0] Deleting item with ID:", row._id)
         await deleteItem(row._id)
 
         // Success message
@@ -50,10 +50,10 @@ export default function ItemsList() {
           showConfirmButton: false,
         })
 
-        
+        console.log("[v0] Refreshing data after delete")
         setParams((p) => ({ ...p, _refresh: Date.now() }))
       } catch (error) {
-        console.log(" Error deleting item:", error)
+        console.log("[v0] Error deleting item:", error)
         // Error message
         Swal.fire({
           title: "Error",
@@ -85,7 +85,7 @@ export default function ItemsList() {
           </div>
           <button
             onClick={() => navigate("/create")}
-            className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-xl font-heading font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="cursor-pointer bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-xl font-heading font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
           >
             AGREGAR PRODUCTO
           </button>
@@ -142,7 +142,7 @@ export default function ItemsList() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
                   />
                 </svg>
               </div>

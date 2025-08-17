@@ -1,4 +1,4 @@
-"use client"
+
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -18,8 +18,8 @@ export default function ItemCreate() {
       text: `¿Deseas crear el producto "${data.nombre}"?`,
       icon: "question",
       showCancelButton: true,
-      confirmButtonColor: "#10b981", // Verde (secondary color)
-      cancelButtonColor: "#6b7280", // Gris
+      confirmButtonColor: "#10b981",
+      cancelButtonColor: "#6b7280", 
       confirmButtonText: "Sí, crear",
       cancelButtonText: "Cancelar",
       reverseButtons: true,
@@ -37,7 +37,7 @@ export default function ItemCreate() {
         formData.append("cantidad", data.cantidad.toString())
         formData.append("precio", data.precio.toString())
 
-        // Handle image file if present
+        
         if (data.foto && data.foto[0]) {
           
           formData.append("foto", data.foto[0])
@@ -45,7 +45,7 @@ export default function ItemCreate() {
 
         await createItem(formData)
 
-        // Success message
+        
         await Swal.fire({
           title: "¡Producto creado!",
           text: `"${data.nombre}" ha sido creado exitosamente.`,
@@ -59,7 +59,7 @@ export default function ItemCreate() {
         navigate("/")
       } catch (error) {
         console.log(" Error creating item:", error)
-        // Error message
+        
         Swal.fire({
           title: "Error",
           text: "No se pudo crear el producto. Inténtalo de nuevo.",
@@ -74,14 +74,9 @@ export default function ItemCreate() {
 
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-2xl p-8 border border-border shadow-sm">
-        <div className="space-y-2 mb-8">
-          <h1 className="text-3xl font-heading font-black text-foreground">CREAR PRODUCTO</h1>
-          <p className="text-lg text-muted-foreground font-medium">Agrega un nuevo producto al inventario</p>
-        </div>
 
         <ItemForm onSubmit={handleSubmit} submitting={submitting} />
-      </div>
+
     </div>
   )
 }

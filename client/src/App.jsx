@@ -1,11 +1,11 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import ItemsList from './pages/ItemsList';
-import ItemCreate from './pages/ItemCreate';
-import ItemEdit from './pages/ItemEdit';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Layout from "./components/Layout"
+import ItemsList from "./pages/ItemsList"
+import ItemCreate from "./pages/ItemCreate"
+import ItemEdit from "./pages/ItemEdit"
 
-const qc = new QueryClient();
+const qc = new QueryClient()
 
 export default function App() {
   return (
@@ -20,5 +20,5 @@ export default function App() {
         </Layout>
       </BrowserRouter>
     </QueryClientProvider>
-  );
+  )
 }
